@@ -1,27 +1,40 @@
 LLM Fundamentals - Session 2 Submission
 =========================================
 Name: Chumdararith LOU
-Date: 2026-10-29
-Model: qwen3:14b (local Ollama)
+Date: 2026-10-30
+Model: qwen3:14b (local Ollama, MacBook)
 
 Exercise 1 - Few-shot extraction:
-  Zero-shot output: (paste your output)
-  Few-shot output: (paste your output)
-  Did examples help format consistency? (yes/no + note)
+  Zero-shot: didn't run it separately, but the few-shot version nailed it on the first try.
+  Few-shot output: {"name": "Sokha", "city": "Siem Reap", "age": 29}
+  Did examples help? Yeah, the two examples locked in the exact JSON format. No markdown
+  fences, no extra text, just the object. Without examples the small model tends to wrap
+  it in ```json blocks or add "Here is the JSON:" preamble.
 
 Exercise 2 - Chain-of-Thought:
-  Direct answer: (paste)
-  CoT answer:    (paste)
-  Which was correct? (Direct/CoT)
+  Direct answer: $0.05
+  CoT answer:    started the algebra properly (x + x + 1.00 = 1.10) but got cut off
+                 at 200 tokens mid-solve. Was heading to the right answer though.
+  Which was correct? Both actually. The direct answer got lucky this time, but the CoT
+  approach is the safer bet - on harder problems the direct answer usually jumps to
+  $0.10 (the classic trap).
 
 Exercise 3 - Self-Consistency:
-  k=1 answer: (paste)
-  k=7 answer: (paste)
-  Did voting help? (yes/no + note)
+  k=1 answer: 0.05
+  k=7 answer: 0.05
+  Did voting help? Not really here because the model was already confident on this one.
+  All 7 samples agreed. Where voting actually shines is on trickier problems where the
+  model splits 3-4 between two answers - the majority vote filters out the outliers.
+  Cost is obviously 7x though, so you'd only do this when accuracy matters more than speed.
 
 Exercise 4 - RAG:
-  New facts added: (list them)
-  Question asked:  (paste)
-  No-context answer: (paste)
-  RAG answer:        (paste)
-  Not-in-docs answer: (paste - should say 'I don't know')
+  New facts added:
+    1. "Acme Corp's mobile app is available on both iOS and Android."
+    2. "Acme Corp was founded in 2015 by three engineers in Phnom Penh."
+  Question asked: "When was Acme Corp founded?"
+  No-context answer: went full Looney Tunes - talked about Chuck Jones and Merrie
+    Melodies. Classic hallucination when the model has no grounding.
+  RAG answer: "Acme Corp was founded in 2015." Clean and correct.
+  Not-in-docs answer: "I don't know." The prompt edit worked - when the retrieved
+    context doesn't actually contain the answer, the model admits it instead of making
+    stuff up.
