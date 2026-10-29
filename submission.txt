@@ -3,6 +3,7 @@ LLM Fundamentals - Session 2 Submission
 Name: Chumdararith LOU
 Date: 2026-10-30
 Model: qwen3:14b (local Ollama, MacBook)
+GitHub: https://github.com/Chumdararith-LOU/llm-fundamentals
 
 Exercise 1 - Few-shot extraction:
   Zero-shot: didn't run it separately, but the few-shot version nailed it on the first try.
