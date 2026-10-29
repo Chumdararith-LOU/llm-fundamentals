@@ -1,0 +1,27 @@
+LLM Fundamentals - Session 2 Submission
+=========================================
+Name: Chumdararith LOU
+Date: 2026-10-29
+Model: qwen3:14b (local Ollama)
+
+Exercise 1 - Few-shot extraction:
+  Zero-shot output: (paste your output)
+  Few-shot output: (paste your output)
+  Did examples help format consistency? (yes/no + note)
+
+Exercise 2 - Chain-of-Thought:
+  Direct answer: (paste)
+  CoT answer:    (paste)
+  Which was correct? (Direct/CoT)
+
+Exercise 3 - Self-Consistency:
+  k=1 answer: (paste)
+  k=7 answer: (paste)
+  Did voting help? (yes/no + note)
+
+Exercise 4 - RAG:
+  New facts added: (list them)
+  Question asked:  (paste)
+  No-context answer: (paste)
+  RAG answer:        (paste)
+  Not-in-docs answer: (paste - should say 'I don't know')
